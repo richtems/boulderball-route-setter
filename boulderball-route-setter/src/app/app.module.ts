@@ -21,6 +21,7 @@ import { DisplayBoardComponent } from './components/display-board/display-board.
 import { TestComponent } from './components/test/test.component';
 import { RouteSetterComponent } from './views/route-setter/route-setter.component';
 import { StartpageComponent } from './views/startpage/startpage.component';
+import { RemoveAccountComponent } from './views/remove-account/remove-account.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { StartpageComponent } from './views/startpage/startpage.component';
     DisplayBoardComponent,
     TestComponent,
     RouteSetterComponent,
-    StartpageComponent
+    StartpageComponent,
+    RemoveAccountComponent
   ],
   imports: [
     BrowserModule,
