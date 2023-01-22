@@ -1,0 +1,23 @@
+<!-- register.component.html -->
+<div class="container">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmailRegister" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input type="email" class="form-control" id="exampleInputUsername" aria-describedby="userhelp" placeholder="Enter Username" [(ngModel)]="username">
+        <small id="userhelp" class="form-text text-muted">Unique</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPasswordRegister" placeholder="Password" [(ngModel)]="password">
+      </div>
+      <!-- <button type="submit" class="btn btn-primary" (click)="register()">Submit</button> -->
+    </form>
+  
+  </div>
+
+<!-- e-mail, username, passwort x2 -->
