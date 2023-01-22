@@ -16,9 +16,8 @@ export class TestComponent implements OnDestroy {
   title = 'angular-nodejs-example';
 
   userForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required)
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   });
 
   users: any[] = [];
