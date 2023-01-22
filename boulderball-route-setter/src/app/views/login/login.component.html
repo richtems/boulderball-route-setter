@@ -1,6 +1,9 @@
 <!-- login.component.html -->
+
+<h1 class="text-center">Login</h1>
+
 <div class="container">
-  <form>
+  <form id="loginForm">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="username">
@@ -10,7 +13,22 @@
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="password">
     </div>
-    <button type="submit" class="btn btn-primary" (click)="login()" routerLink="/start">Submit</button>
+    <div class="row justify-content-center">
+      <button class="register-btn" routerLink="/register">
+        <span class="material-icons">
+          app_registration
+        </span> 
+        <span>Become a Router Setter</span>
+      </button>
+    </div>
+    <div class="row justify-content-center">
+      <button type="submit" class="btn btn-primary login-btn" (click)="login()" routerLink="/start">
+        <span class="material-icons">
+          login
+        </span>
+        <span class="btn-text">Login</span>
+      </button>
+    </div>
   </form>
 
 </div>
