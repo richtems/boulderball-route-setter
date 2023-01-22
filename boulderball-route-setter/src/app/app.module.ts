@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UsersComponent } from './components/users/users.component';
+import { DisplayBoardComponent } from './components/display-board/display-board.component';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     LogoutComponent,
     RegisterComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    UsersComponent,
+    DisplayBoardComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +40,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     NgbModule
   ],
   providers: [],
