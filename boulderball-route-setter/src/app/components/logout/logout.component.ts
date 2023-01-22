@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LogoutComponent {
 
+  logout() {
+    // Perform login here
+    console.log('logout');
+  }
+
 }

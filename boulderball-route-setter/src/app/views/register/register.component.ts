@@ -8,17 +8,17 @@ import { Component } from '@angular/core';
 export class RegisterComponent {
   email: string;
   username: string;
-  password: string;
+  passwordRegister: string;
 
   constructor() {
     this.username = '';
-    this.password = '';
+    this.passwordRegister = '';
     this.email = '';
   }
 
-  login() {
+  register() {
     // Perform login here
-    console.log(this.username, this.password);
+    console.log(this.username, this.passwordRegister);
   }
 
 }
