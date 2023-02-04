@@ -1,0 +1,12 @@
+<div class="container menu">
+    <div class="row">
+        <div class="col-4 text-center container-menu-item" *ngFor="let item of items; let i = index" (click)="setSelected(i)">
+        <a href="#" routerLink="{{ item.link }}">
+            <img [src]="item.src" alt="Hexagon" class="bg-image" [ngClass]="{'selected': i === selectedIndex}"/>
+            <div class="overlay">
+            <span class="material-icons">{{ item.icon }}</span>
+            </div>
+        </a>
+        </div>
+    </div>
+</div>

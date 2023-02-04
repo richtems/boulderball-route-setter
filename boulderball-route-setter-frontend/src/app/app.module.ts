@@ -23,6 +23,7 @@ import { RouteSetterComponent } from './views/route-setter/route-setter.componen
 import { StartpageComponent } from './views/startpage/startpage.component';
 import { RemoveAccountComponent } from './views/remove-account/remove-account.component';
 import { SelectColorComponent } from './components/select-color/select-color.component';
+import { TopMenuComponent } from './components/top-menu/top-menu.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SelectColorComponent } from './components/select-color/select-color.com
     RouteSetterComponent,
     StartpageComponent,
     RemoveAccountComponent,
-    SelectColorComponent
+    SelectColorComponent,
+    TopMenuComponent
   ],
   imports: [
     BrowserModule,

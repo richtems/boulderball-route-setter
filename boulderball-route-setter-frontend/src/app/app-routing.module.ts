@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { RouteSetterComponent } from './views/route-setter/route-setter.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: "start",
-    component: StartpageComponent
+    component: TopMenuComponent
   },
   {
     path: "set-route",
