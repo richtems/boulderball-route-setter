@@ -13,9 +13,9 @@ export class TopMenuComponent {
 
   items = [    
     { link: "/set-route", src: '../../../assets/hexagon-pink.svg', icon: 'construction' },   
-    { link: "/set-route", src: '../../../assets/hexagon-darkblue.svg', icon: 'star' },   
-    { link: "/set-route", src: '../../../assets/hexagon-orange.svg', icon: 'manage_search' }  ];
-    
+    { link: "/start2", src: '../../../assets/hexagon-darkblue.svg', icon: 'star' },   
+    { link: "/login2", src: '../../../assets/hexagon-orange.svg', icon: 'manage_search' }  ];
+
   selectedIndex: number= 1;
 
   setSelected(index: number) {

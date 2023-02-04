@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RouteEntryComponent } from './components/route-entry/route-entry.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
@@ -10,7 +11,7 @@ const routes: Routes = [
   {
     path: "",
     redirectTo: "login",
-    pathMatch: "full"
+    pathMatch: "full",
   },
   {
     path: "login",
@@ -25,8 +26,22 @@ const routes: Routes = [
     component: TopMenuComponent
   },
   {
-    path: "set-route",
-    component: RouteSetterComponent
+    path: "",
+    component: TopMenuComponent,
+    children:[
+      {
+        path: "set-route",
+        component: RouteSetterComponent
+      },
+      {
+        path: "start2",
+        component: RouteEntryComponent
+      },
+      {
+        path: "login2",
+        component: LoginComponent
+      },
+    ]
   },
 ];
 
