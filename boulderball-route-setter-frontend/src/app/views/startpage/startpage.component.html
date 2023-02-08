@@ -1,29 +1,41 @@
 <div class="container">
+  <!-- <h1 class="text-center">Was willst du tun?</h1> -->
 
-<!-- <h1 class="text-center">Was willst du tun?</h1> -->
-
-<div class="routeStep text-center pink-primary">
+  <div class="routeStep text-center pink-primary">
     <a href="#" routerLink="/set-route">
-        <img src="../../../assets/hexagon-pink.svg" alt="Hexagon" />
-        <div class="numberOverHex">Set New Route</div>
+      <img src="../../../assets/hexagon-pink.svg" alt="Hexagon" />
+      <div class="numberOverHex">Set New Route</div>
     </a>
-</div>
+  </div>
 
-<div class="routeStep text-center routeStep-left darkblue-primary">
+  <div class="routeStep text-center routeStep-left darkblue-primary">
     <a href="#">
-        <img src="../../../assets/hexagon-darkblue.svg" alt="Hexagon" />
-        <div class="numberOverHex">My Routes</div>
+      <img src="../../../assets/hexagon-darkblue.svg" alt="Hexagon" />
+      <div class="numberOverHex">My Routes</div>
     </a>
-</div>
+  </div>
 
-<div class="routeStep text-center routeStep-right orange-primary">
+  <div class="routeStep text-center routeStep-right orange-primary">
     <a href="#">
-        <img src="../../../assets/hexagon-orange.svg" alt="Hexagon" />
-        <div class="numberOverHex">Find Routes</div>
+      <img src="../../../assets/hexagon-orange.svg" alt="Hexagon" />
+      <div class="numberOverHex">Find Routes</div>
     </a>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Username</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of data; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.password }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-
-
-</div>
-

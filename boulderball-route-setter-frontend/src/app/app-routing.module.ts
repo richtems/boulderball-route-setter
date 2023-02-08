@@ -9,44 +9,40 @@ import { StartpageComponent } from './views/startpage/startpage.component';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "login",
-    pathMatch: "full",
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
   {
-    path: "login",
-    component: LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: "register",
-    component: RegisterComponent
+    path: 'register',
+    component: RegisterComponent,
   },
   {
-    path: "start",
-    component: TopMenuComponent
-  },
-  {
-    path: "",
+    path: '',
     component: TopMenuComponent,
-    children:[
+    children: [
       {
-        path: "set-route",
-        component: RouteSetterComponent
+        path: 'set-route',
+        component: RouteSetterComponent,
       },
       {
-        path: "start2",
-        component: RouteEntryComponent
+        path: 'favorites',
+        component: RouteEntryComponent,
       },
       {
-        path: "login2",
-        component: LoginComponent
+        path: 'search',
+        component: LoginComponent,
       },
-    ]
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

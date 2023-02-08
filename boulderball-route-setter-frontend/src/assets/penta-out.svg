@@ -1,0 +1,18 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 255">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #478e7a;
+      }
+
+      .cls-2 {
+        fill: #316759;
+      }
+    </style>
+  </defs>
+  <g id="penta-in">
+    <polygon class="cls-1" points="127.5 51.86 55.33 104.3 82.9 189.14 172.1 189.14 199.67 104.3 127.5 51.86"/>
+    <polygon class="cls-2" points="127.5 68.56 71.83 109 93.1 174.44 161.9 174.44 183.17 109 127.5 68.56"/>
+    <polygon class="cls-1" points="127.5 82.92 84.83 113.92 101.13 164.08 153.87 164.08 170.17 113.92 127.5 82.92"/>
+  </g>
+</svg>

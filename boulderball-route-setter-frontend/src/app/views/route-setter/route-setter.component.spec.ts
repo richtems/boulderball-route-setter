@@ -8,9 +8,8 @@ describe('RouteSetterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RouteSetterComponent ]
-    })
-    .compileComponents();
+      declarations: [RouteSetterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RouteSetterComponent);
     component = fixture.componentInstance;

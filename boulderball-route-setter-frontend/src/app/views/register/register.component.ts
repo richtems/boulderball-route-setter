@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.less']
+  styleUrls: ['./register.component.less'],
 })
 export class RegisterComponent {
   email: string;
@@ -20,5 +20,4 @@ export class RegisterComponent {
     // Perform login here
     console.log(this.username, this.passwordRegister);
   }
-
 }

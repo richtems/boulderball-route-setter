@@ -8,9 +8,8 @@ describe('RemoveAccountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RemoveAccountComponent ]
-    })
-    .compileComponents();
+      declarations: [RemoveAccountComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RemoveAccountComponent);
     component = fixture.componentInstance;

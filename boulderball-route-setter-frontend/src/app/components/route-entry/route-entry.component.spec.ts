@@ -8,9 +8,8 @@ describe('RouteEntryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RouteEntryComponent ]
-    })
-    .compileComponents();
+      declarations: [RouteEntryComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RouteEntryComponent);
     component = fixture.componentInstance;

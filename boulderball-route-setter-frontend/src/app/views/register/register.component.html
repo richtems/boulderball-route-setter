@@ -3,29 +3,55 @@
 <h1 class="text-center">Register</h1>
 
 <div class="container">
-    <form id="registerForm">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmailRegister" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Username</label>
-        <input type="email" class="form-control" id="exampleInputUsername" aria-describedby="userhelp" placeholder="Enter Username" [(ngModel)]="username">
-        <small id="userhelp" class="form-text text-muted">Unique</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPasswordRegister" placeholder="Password" [(ngModel)]="passwordRegister">
-      </div>
+  <form id="registerForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmailRegister"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [(ngModel)]="email"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputUsername"
+        aria-describedby="userhelp"
+        placeholder="Enter Username"
+        [(ngModel)]="username"
+      />
+      <small id="userhelp" class="form-text text-muted">Unique</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPasswordRegister"
+        placeholder="Password"
+        [(ngModel)]="passwordRegister"
+      />
+    </div>
 
-      <div class="row justify-content-center">
-        <button type="submit" class="btn btn-outline-primary register-btn" (click)="register()" routerLink="/start">
-          <span class="btn-text">Register</span>
-        </button>
-      </div>
-    </form>
-  
-  </div>
+    <div class="row justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-outline-primary register-btn"
+        (click)="register()"
+        routerLink="/start"
+      >
+        <span class="btn-text">Register</span>
+      </button>
+    </div>
+  </form>
+</div>
 
 <!-- e-mail, username, passwort x2 -->

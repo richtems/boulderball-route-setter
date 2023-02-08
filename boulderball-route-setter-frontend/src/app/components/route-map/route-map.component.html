@@ -1,0 +1,8 @@
+<div class="container">
+  <app-route-hold
+    *ngFor="let hold of holds; index as i"
+    [routMapHold]="hold"
+    class="hexa"
+    [style]="'left:' + positionsX[i] + 'em; bottom:' + positionsY[i] + 'em;'"
+  ></app-route-hold>
+</div>

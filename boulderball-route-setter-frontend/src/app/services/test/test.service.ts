@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TestService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   rootURL = '/api';
 
@@ -14,6 +14,6 @@ export class TestService {
   }
 
   addUser(user: any) {
-    return this.http.post(this.rootURL + '/user', {user});
+    return this.http.post(this.rootURL + '/user', { user });
   }
 }

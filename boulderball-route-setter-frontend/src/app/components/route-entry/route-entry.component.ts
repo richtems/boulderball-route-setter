@@ -3,9 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-route-entry',
   templateUrl: './route-entry.component.html',
-  styleUrls: ['./route-entry.component.less']
+  styleUrls: ['./route-entry.component.less'],
 })
-
 export class RouteEntryComponent {
   sliderLow: number = 1;
   sliderHigh: number = 7;
@@ -17,12 +16,12 @@ export class RouteEntryComponent {
     { grade: 2, name: 'Buch 2', author: 'Autor 1' },
     { grade: 3, name: 'Buch 2', author: 'Autor 2' },
     { grade: 5, name: 'Buch 2', author: 'Autor 3' },
-    { grade: 1, name: 'Buch 3', author: 'Autor 3' }
+    { grade: 1, name: 'Buch 3', author: 'Autor 3' },
   ];
-  
+
   filteredItems = this.items;
 
-  selectColor(grade:number) {
+  selectColor(grade: number) {
     switch (grade) {
       case 1:
         return '#74C145';
@@ -51,30 +50,26 @@ export class RouteEntryComponent {
     }
   }
 
-
   filterRoutes() {
     let searchTextLowerCase = this.searchText.toLowerCase();
-    console.log(this.sliderHigh);
-    console.log(this.sliderLow);
-    
-    this.filteredItems = this.items.filter((item)=> {
-      return item.grade >= this.sliderLow 
-      && item.grade <= this.sliderHigh 
-      && (
-        item.name.toLocaleLowerCase().includes(searchTextLowerCase)
-        || item.author.toLocaleLowerCase().includes(searchTextLowerCase)
-      )
-    })
+
+    this.filteredItems = this.items.filter((item) => {
+      return (
+        item.grade >= this.sliderLow &&
+        item.grade <= this.sliderHigh &&
+        (item.name.toLocaleLowerCase().includes(searchTextLowerCase) ||
+          item.author.toLocaleLowerCase().includes(searchTextLowerCase))
+      );
+    });
   }
 
-  sliderLowChange(Low:number) {
+  sliderLowChange(Low: number) {
     this.sliderLow = Low;
     this.filterRoutes();
   }
 
-  sliderHighChange(High:number) {
+  sliderHighChange(High: number) {
     this.sliderHigh = High;
     this.filterRoutes();
   }
-
 }

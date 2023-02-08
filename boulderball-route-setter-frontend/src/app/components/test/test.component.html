@@ -1,30 +1,40 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-7 mrgnbtm">
-        <h2>Create User</h2>
-        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-          <div class="row">
-            <div class="form-group col-md-6">
-              <label for="exampleInputEmail1">Username</label>
-              <input type="text" class="form-control" formControlName="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="username">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="text" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="password">
-            </div>
+  <div class="row">
+    <div class="col-md-7 mrgnbtm">
+      <h2>Create User</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="exampleInputEmail1">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="username"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="username"
+            />
           </div>
-          <button type="submit" [disabled]="!userForm.valid" class="btn btn-danger">Create</button>
-        </form>
-      </div>
-      <div class="col-md-4 mrgnbtm">
-        <app-display-board
-         [userCount]="userCount"
-         (getUsersEvent)="getAllUsers()"
-        >
-        </app-display-board>
-      </div>
+          <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="password"
+              id="exampleInputPassword1"
+              placeholder="password"
+            />
+          </div>
+        </div>
+        <button type="submit" [disabled]="!userForm.valid" class="btn btn-danger">Create</button>
+      </form>
+    </div>
+    <div class="col-md-4 mrgnbtm">
+      <app-display-board [userCount]="userCount" (getUsersEvent)="getAllUsers()">
+      </app-display-board>
     </div>
   </div>
-  <div class="mrgnbtm">
-    <app-users *ngIf="users.length !== 0" [users]="users"></app-users>
-  </div>
+</div>
+<div class="mrgnbtm">
+  <app-users *ngIf="users.length !== 0" [users]="users"></app-users>
+</div>

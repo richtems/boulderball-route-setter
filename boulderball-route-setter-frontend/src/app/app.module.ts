@@ -10,8 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatListModule } from '@angular/material/list';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { LoginComponent } from './views/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +28,8 @@ import { RemoveAccountComponent } from './views/remove-account/remove-account.co
 import { SelectColorComponent } from './components/select-color/select-color.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { RouteEntryComponent } from './components/route-entry/route-entry.component';
+import { RouteMapComponent } from './components/route-map/route-map.component';
+import { RouteHoldComponent } from './components/route-hold/route-hold.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { RouteEntryComponent } from './components/route-entry/route-entry.compon
     SelectColorComponent,
     TopMenuComponent,
     RouteEntryComponent,
+    RouteMapComponent,
+    RouteHoldComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,9 +63,9 @@ import { RouteEntryComponent } from './components/route-entry/route-entry.compon
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
