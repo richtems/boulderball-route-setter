@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { RouteMapsService } from './route-maps.service';
 import { CreateRouteMapDto } from './dto/create-route-map.dto';
 import { UpdateRouteMapDto } from './dto/update-route-map.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('route-maps')
 @Controller('route-maps')
 export class RouteMapsController {
   constructor(private readonly routeMapsService: RouteMapsService) {}

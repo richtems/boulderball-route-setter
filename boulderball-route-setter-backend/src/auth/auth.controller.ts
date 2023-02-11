@@ -1,14 +1,37 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
+import { ParseIntPipe } from '@nestjs/common/pipes';
+import { ApiParam, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { CreateAuthDto } from './dto/create-auth.dto';
+import { LoginAuthDto } from './dto/login-auth.dto';
 import { UpdateAuthDto } from './dto/update-auth.dto';
+import { LocalAuthGuard } from './guards/local-auth.guard';
+import { UserInfo } from './user-info';
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @UseGuards(LocalAuthGuard)
+  @Post('login')
+  async login(@Request() req: any, @Body() credentials: LoginAuthDto) {
+    const userInfo: UserInfo = req.user;
+    return this.authService.login(userInfo);
+  }
+
   @Post()
-  create(@Body() createAuthDto: CreateAuthDto) {
+  create(@Request() req: any, @Body() createAuthDto: CreateAuthDto) {
     return this.authService.create(createAuthDto);
   }
 
@@ -18,7 +41,7 @@ export class AuthController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id', ParseIntPipe) id: number) {
     return this.authService.findOne(+id);
   }
 
