@@ -2,7 +2,7 @@ import { JwtModuleOptions } from '@nestjs/jwt';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 class Config {
-  port: 3000;
+  port: number = 3000;
 
   databaseConfig: TypeOrmModuleOptions = {
     type: 'sqlite',

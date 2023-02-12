@@ -18,5 +18,6 @@ async function bootstrap() {
   SwaggerModule.setup('swagger', app, document);
 
   await app.listen(config.port);
+  console.log("Server started on port: " + config.port)
 }
 bootstrap();
