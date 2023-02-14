@@ -4,6 +4,8 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { ParseIntPipe } from '@nestjs/common/pipes';
 import { ApiTags } from '@nestjs/swagger';
+import { Query } from '@nestjs/common/decorators';
+import { UserExistsDto } from './dto/user-exists.dto';
 
 @ApiTags('users')
 @Controller('users')
@@ -18,6 +20,19 @@ export class UsersController {
   @Get()
   findAll() {
     return this.usersService.findAll();
+  }
+
+  @Get('exists')
+  async exists(@Query() queries: UserExistsDto) {
+    if (queries.email && (await this.usersService.findOneByEmail(queries.email)) != null) {
+      return true;
+    }
+
+    if (queries.username && (await this.usersService.findOneByUsername(queries.username)) != null) {
+      return true;
+    }
+
+    return false;
   }
 
   @Get(':id')

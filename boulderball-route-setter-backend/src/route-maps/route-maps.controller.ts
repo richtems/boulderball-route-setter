@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/common';
 import { RouteMapsService } from './route-maps.service';
 import { CreateRouteMapDto } from './dto/create-route-map.dto';
 import { UpdateRouteMapDto } from './dto/update-route-map.dto';
@@ -10,13 +10,18 @@ export class RouteMapsController {
   constructor(private readonly routeMapsService: RouteMapsService) {}
 
   @Post()
-  create(@Body() createRouteMapDto: CreateRouteMapDto) {
-    return this.routeMapsService.create(createRouteMapDto);
+  create(@Req() req: any, @Body() createRouteMapDto: CreateRouteMapDto) {
+    return this.routeMapsService.create(createRouteMapDto, req.user.sub);
   }
 
   @Get()
   findAll() {
     return this.routeMapsService.findAll();
+  }
+
+  @Get('favorites')
+  findFavorites(@Req() req: any) {
+    return this.routeMapsService.findFavorites(req.user.sub);
   }
 
   @Get(':id')

@@ -6,17 +6,20 @@ import {
   Patch,
   Param,
   Delete,
-  Request,
+  Req,
+  Res,
   UseGuards,
 } from '@nestjs/common';
 import { ParseIntPipe } from '@nestjs/common/pipes';
 import { ApiParam, ApiTags } from '@nestjs/swagger';
+import { Response } from 'express';
 import { AuthService } from './auth.service';
-import { CreateAuthDto } from './dto/create-auth.dto';
+import { AccessTokenDto } from './dto/access-token.dto';
 import { LoginAuthDto } from './dto/login-auth.dto';
-import { UpdateAuthDto } from './dto/update-auth.dto';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { UserInfo } from './user-info';
+import { config } from '../config/configuration';
+import { SetMetadata } from '@nestjs/common/decorators';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -24,34 +27,16 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @UseGuards(LocalAuthGuard)
+  @SetMetadata('isPublic', true)
   @Post('login')
-  async login(@Request() req: any, @Body() credentials: LoginAuthDto) {
+  async login(
+    @Req() req: any,
+    @Res({ passthrough: true }) res: Response,
+    @Body() credentials: LoginAuthDto,
+  ): Promise<AccessTokenDto> {
     const userInfo: UserInfo = req.user;
-    return this.authService.login(userInfo);
-  }
-
-  @Post()
-  create(@Request() req: any, @Body() createAuthDto: CreateAuthDto) {
-    return this.authService.create(createAuthDto);
-  }
-
-  @Get()
-  findAll() {
-    return this.authService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.authService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateAuthDto: UpdateAuthDto) {
-    return this.authService.update(+id, updateAuthDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.authService.remove(+id);
+    const token = this.authService.login(userInfo);
+    res.cookie('access_token', token, { httpOnly: true, secure: config.useSsl });
+    return { access_token: token };
   }
 }

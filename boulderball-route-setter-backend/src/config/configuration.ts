@@ -3,6 +3,11 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 class Config {
   port: number = 3000;
+  useSsl: boolean = false;
+  sslKeyFile: string = './cert/localhost.decrypted.key';
+  sslCertFile: string = './cert/localhost.crt';
+  staticContentLocation: string =
+    '../../boulderball-route-setter-frontend/dist/boulderball-route-setter';
 
   databaseConfig: TypeOrmModuleOptions = {
     type: 'sqlite',

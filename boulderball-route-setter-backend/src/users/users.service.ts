@@ -10,31 +10,38 @@ import * as bcrypt from 'bcrypt';
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private readonly usersRepository: Repository<User>,
+    private readonly repository: Repository<User>,
   ) {}
 
   async create(createUserDto: CreateUserDto): Promise<User> {
-    return this.usersRepository.save({
+    return this.repository.save({
       username: createUserDto.username,
+      email: createUserDto.email,
       displayname: createUserDto.displayname,
       password: await bcrypt.hash(createUserDto.password, 10),
+      myRouteMaps: [],
+      favorites: [],
     });
   }
 
   findAll(): Promise<User[]> {
-    return this.usersRepository.find();
+    return this.repository.find();
   }
 
   findOne(id: number): Promise<User | null> {
-    return this.usersRepository.findOneBy({ id: id });
+    return this.repository.findOneBy({ id: id });
   }
 
   findOneByUsername(username: string): Promise<User | null> {
-    return this.usersRepository.findOneBy({ username: username });
+    return this.repository.findOneBy({ username: username });
+  }
+
+  findOneByEmail(email: string): Promise<User | null> {
+    return this.repository.findOneBy({ email: email });
   }
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<UpdateResult> {
-    return this.usersRepository.update(id, {
+    return this.repository.update(id, {
       displayname: updateUserDto.displayname,
       username: updateUserDto.username,
       password: updateUserDto.password,
@@ -42,6 +49,6 @@ export class UsersService {
   }
 
   remove(id: number): Promise<DeleteResult> {
-    return this.usersRepository.delete(id);
+    return this.repository.delete(id);
   }
 }
